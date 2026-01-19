@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCOBALENO - Residencia Geriátrica Innovadora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #C85A3A;
+            --secondary: #8B6F47;
+            --accent: #D4A574;
+            --light-bg: #FBF7F3;
+            --dark-text: #2C2C2C;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+            .btn-primary:hover {
+                background-color: #B04A2A;
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(200, 90, 58, 0.2);
+            }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+            .btn-secondary:hover {
+                background-color: var(--primary);
+                color: white;
+            }
+
+        .nav-link {
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+            .nav-link:hover {
+                color: var(--primary);
+            }
+
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--primary);
+                transition: width 0.3s ease;
+            }
+
+            .nav-link:hover::after {
+                width: 100%;
+            }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+            .feature-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(200, 90, 58, 0.15);
+            }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+            .section-title::after {
+                content: '';
+                width: 60px;
+                height: 4px;
+                background-color: var(--accent);
+                display: block;
+                margin: 15px auto 0;
+            }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: white;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 40;
+        }
+
+            .mobile-menu.active {
+                display: flex;
+            }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+            .hamburger span {
+                width: 25px;
+                height: 3px;
+                background-color: var(--dark-text);
+                transition: all 0.3s ease;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(10px, 10px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navegación -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold" style="color: var(--primary);">
+                ARCOBALENO
+            </div>
+
+            <div class="nav-links hidden md:flex gap-8">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#caracteristicas" class="nav-link">Características</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#testimonios" class="nav-link">Testimonios</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+
+            <button class="btn-primary hidden md:block">Solicitar Demo</button>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#inicio" class="nav-link">Inicio</a>
+            <a href="#caracteristicas" class="nav-link">Características</a>
+            <a href="#servicios" class="nav-link">Servicios</a>
+            <a href="#testimonios" class="nav-link">Testimonios</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+            <button class="btn-primary w-full">Solicitar Demo</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-gradient text-white pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                El Futuro del Cuidado Geriátrico
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 opacity-90 max-w-3xl mx-auto">
+                En ARCOBALENO combinamos tecnología avanzada, calidez humana y actividades significativas para crear un nuevo estándar en el cuidado de adultos mayores.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button class="btn-primary">Conocer Más</button>
+                <button class="btn-secondary">Ver Video</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Características -->
+    <section id="caracteristicas" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="section-title">Por Qué Elegir ARCOBALENO</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="feature-card">
+                    <div class="feature-icon">🏥</div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary);">Atención Médica 24/7</h3>
+                    <p class="text-gray-600">Personal médico especializado disponible las 24 horas, con tecnología de monitoreo remoto en tiempo real.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary);">Estimulación Cognitiva</h3>
+                    <p class="text-gray-600">Programas personalizados de actividades intelectuales, artísticas y sociales para mantener la mente activa.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary);">Tecnología Innovadora</h3>
+                    <p class="text-gray-600">Plataforma digital que conecta residentes con sus familias y facilita la comunicación constante.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🍽️</div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary);">Nutrición Personalizada</h3>
+                    <p class="text-gray-600">Menús diseñados por nutricionistas, adaptados a necesidades dietéticas específicas de cada residente.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎭</div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary);">Actividades Recreativas</h3>
+                    <p class="text-gray-600">Desde talleres de artes, música, hasta excursiones comunitarias y eventos especiales.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--primary);">Comunidad Vibrante</h3>
+                    <p class="text-gray-600">Espacios diseñados para fomentar la socialización y crear amistades duraderas entre residentes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-20 px-4" style="background-color: #F5F1ED;">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="section-title">Nuestros Servicios</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                <div class="bg-white p-8 rounded-lg shadow-md border-l-4" style="border-left-color: var(--primary);">
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary);">Residencia Permanente</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li>✓ Habitaciones privadas y compartidas</li>
+                        <li>✓ Acceso a todas las amenidades</li>
+                        <li>✓ Atención médica integral</li>
+                        <li>✓ Programas de actividades diarias</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-md border-l-4" style="border-left-color: var(--accent);">
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--secondary);">Respiro Temporal</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li>✓ Estancias de corta duración</li>
+                        <li>✓ Ideal para vacaciones o recuperación</li>
+                        <li>✓ Flexibilidad en horarios</li>
+                        <li>✓ Mismo nivel de atención y confort</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-md border-l-4" style="border-left-color: var(--primary);">
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary);">Rehabilitación Post-Hospitalaria</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li>✓ Terapia física especializada</li>
+                        <li>✓ Seguimiento médico intensivo</li>
+                        <li>✓ Plan de recuperación personalizado</li>
+                        <li>✓ Apoyo psicológico y emocional</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-md border-l-4" style="border-left-color: var(--accent);">
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--secondary);">Programas Especializados</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li>✓ Cuidado de Alzheimer y demencia</li>
+                        <li>✓ Manejo del dolor crónico</li>
+                        <li>✓ Apoyo emocional y espiritual</li>
+                        <li>✓ Terapia ocupacional avanzada</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="section-title">Lo Que Dicen Nuestras Familias</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="testimonial-card">
+                    <div class="flex gap-1 mb-4">
+                        <span style="color: var(--primary);">★</span>
+                        <span style="color: var(--primary);">★</span>
+                        <span style="color: var(--primary);">★</span>
+                        <span style="color: var(--primary);">★</span>
+                        <span style="color: var(--primary);">★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Mi madre está más feliz que nunca. Las actividades son variadas y el equipo es realmente atento. ¡No puedo pedir más!"</p>
+                    <p class="font-bold" style="color: var(--primary);">- María González</p>
+                    <p class="text-sm text-gray-500">Familia de Sofia, 78 años</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="flex gap-1 mb-4">
+                        <span style="color: var(--primary);">★</span>
+                        <span style="color: var(--primary);">★</span>
+                        <span style="color: var(--primary);">★</span>
+                        <span style="color: var(--primary);">★</span>
+                        <span style="color: var(--primary);">★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"La plataforma digital me mantiene conectado con mi abuela diariamente. Es como si estuviéramos en la misma habitación."</p>
+                    <p class="font-bold" style="color: var(--primary);">- Juan Martínez</p>
+                    <p class="text-sm text-gray-500">Familia de Carlos, 82 años</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="flex gap-1 mb-4">
+                        <span style="color: var(--primary);">★</span>
+                        <span style="color: var(--primary);">★</span>
+                        <span style="color: var(--primary);">★</span>
+                        <span style="color: var(--primary);">★</span>
+                        <span style="color: var(--primary);">★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Después de su hospitalización, ARCOBALENO fue crucial para su recuperación. La profesionalidad del equipo es excepcional."</p>
+                    <p class="font-bold" style="color: var(--primary);">- Rosa Fernández</p>
+                    <p class="text-sm text-gray-500">Familia de Antonio, 80 años</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto / CTA -->
+    <section id="contacto" class="hero-gradient text-white py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center">¿Listo para Dar el Próximo Paso?</h2>
+            <p class="text-xl text-center mb-12 opacity-90">
+                Contacta con nuestro equipo para conocer ARCOBALENO y descubrir cómo podemos mejorar la calidad de vida de tu ser querido.
+            </p>
+
+            <form id="contactForm" class="max-w-2xl mx-auto bg-white bg-opacity-10 backdrop-blur-md p-8 rounded-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <input type="text" placeholder="Nombre" class="px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-gray-200 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white" required>
+                    <input type="email" placeholder="Email" class="px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-gray-200 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white" required>
+                </div>
+
+                <div class="mb-6">
+                    <input type="tel" placeholder="Teléfono" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-gray-200 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white" required>
+                </div>
+
+                <div class="mb-6">
+                    <textarea placeholder="Cuéntanos sobre tu situación..." rows="4" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-gray-200 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-white text-[var(--primary)] font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all">
+                    Solicitar Información
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white font-bold mb-4 text-lg">ARCOBALENO</h3>
+                    <p class="text-sm">El nuevo estándar en cuidado geriátrico innovador.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Inicio</a></li>
+                        <li><a href="#" class="hover:text-white transition">Servicios</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legales</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Política de Privacidad</a></li>
+                        <li><a href="#" class="hover:text-white transition">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contacto</h4>
+                    <p class="text-sm">📞 +34 900 123 456</p>
+                    <p class="text-sm">📧 info@ARCOBALENO.es</p>
+                    <p class="text-sm">📍 Madrid, España</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; 2025 ARCOBALENO Residencias. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll para links de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu interés! Nos pondremos en contacto pronto.');
+            this.reset();
+        });
+
+        // Animación de entrada para elementos
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
