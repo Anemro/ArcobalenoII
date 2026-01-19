@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCOBALENO - Cuidado Integral para Adultos Mayores</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-heart"></i>
+                    <span>ARCOBALENO</span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#concepto" class="nav-link">Nuestro Concepto</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Un Nuevo Concepto en el 
+                    <span class="highlight">Cuidado de Adultos Mayores</span>
+                </h1>
+                <p class="hero-description">
+                    En ARCOBALENO revolucionamos el cuidado geriátrico con tecnología avanzada, 
+                    atención personalizada y un enfoque integral que prioriza la dignidad, 
+                    independencia y bienestar de cada residente.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('contacto')">
+                        <i class="fas fa-calendar-alt"></i>
+                        Agendar Visita
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('concepto')">
+                        <i class="fas fa-play"></i>
+                        Conocer Más
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="2022-09-09.webp" alt="Cuidado integral para adultos mayores" />
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Años de Experiencia</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Satisfacción Familiar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concepto Innovador -->
+    <section id="concepto" class="concept">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestro Concepto Revolucionario</h2>
+                <p class="section-subtitle">
+                    Combinamos tradición, tecnología y humanidad para crear un nuevo estándar en el cuidado geriátrico
+                </p>
+            </div>
+            
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Estimulación Cognitiva Avanzada</h3>
+                    <p>Programas personalizados con realidad virtual y terapias innovadoras para mantener la mente activa y prevenir el deterioro cognitivo.</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Monitoreo Inteligente 24/7</h3>
+                    <p>Sensores IoT y IA para monitoreo continuo de signos vitales, patrones de sueño y actividad, garantizando respuesta inmediata ante cualquier cambio.</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Comunidad Intergeneracional</h3>
+                    <p>Espacios diseñados para fomentar la interacción con diferentes generaciones, manteniendo vínculos sociales y emocionales saludables.</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Terapias Naturales</h3>
+                    <p>Jardines terapéuticos, aromaterapia y espacios biofílicos que conectan con la naturaleza para mejorar el bienestar físico y emocional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Servicios Integrales</h2>
+                <p class="section-subtitle">
+                    Atención completa y personalizada para cada etapa del envejecimiento
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Atención Médica Especializada</h3>
+                    <p>Equipo multidisciplinario con geriatras, enfermeras especializadas y terapeutas disponibles las 24 horas.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Nutrición Personalizada</h3>
+                    <p>Menús adaptados a necesidades específicas, dietas terapéuticas y cocina casera preparada por chefs especializados.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Fisioterapia y Rehabilitación</h3>
+                    <p>Programas de ejercicio adaptado, fisioterapia y terapia ocupacional para mantener la movilidad e independencia.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Actividades Recreativas</h3>
+                    <p>Talleres de arte, música, lectura y actividades sociales diseñadas para estimular la creatividad y socialización.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Conectividad Familiar</h3>
+                    <p>Plataforma digital para que las familias se mantengan conectadas con actualizaciones diarias y videollamadas programadas.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Seguridad Avanzada</h3>
+                    <p>Sistemas de seguridad inteligentes, control de acceso y protocolos de emergencia para garantizar la tranquilidad total.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Lo Que Dicen Nuestras Familias</h2>
+                <p class="section-subtitle">
+                    Testimonios reales de familias que han confiado en nosotros
+                </p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"ARCOBALENO cambió completamente nuestra perspectiva sobre el cuidado geriátrico. Mi madre no solo está bien cuidada, sino que está más activa y feliz que nunca. La tecnología que utilizan nos permite estar tranquilos sabiendo que está en las mejores manos."</p>
+                        <div class="testimonial-author">
+                            <img src="P2.png" alt="María González" />
+                            <div>
+                                <h4>María González</h4>
+                                <span>Hija de residente</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"El enfoque integral y humano de ARCOBALENO es excepcional. Los jardines terapéuticos y las actividades intergeneracionales han mejorado significativamente la calidad de vida de mi padre. Es más que una residencia, es un hogar."</p>
+                        <div class="testimonial-author">
+                            <img src="P1.png" alt="Carlos Mendoza" />
+                            <div>
+                                <h4>Carlos Mendoza</h4>
+                                <span>Hijo de residente</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"La atención personalizada y el monitoreo inteligente nos dan una tranquilidad incomparable. Recibimos actualizaciones diarias y podemos ver cómo mi madre participa en actividades que realmente disfruta. Recomiendo ARCOBALENO sin dudarlo."</p>
+                        <div class="testimonial-author">
+                            <img src="P3.png" alt="Ana Rodríguez" />
+                            <div>
+                                <h4>Ana Rodríguez</h4>
+                                <span>Hija de residente</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <button class="nav-dot active" onclick="showTestimonial(0)"></button>
+                <button class="nav-dot" onclick="showTestimonial(1)"></button>
+                <button class="nav-dot" onclick="showTestimonial(2)"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>¿Listo para Conocer ARCOBALENO?</h2>
+                    <p>Agenda una visita personalizada y descubre cómo podemos cuidar a tu ser querido con el amor y la atención que se merece.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Av. Principal 123, Zona Residencial<br>Ciudad, País</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>+549 (3541) 12-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@arcobaleno.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Horarios de Visita</h4>
+                                <p>Lunes a Domingo<br>9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tus necesidades específicas..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heart"></i>
+                        <span>ARCOBALENO</span>
+                    </div>
+                    <p>Redefiniendo el cuidado geriátrico con amor, tecnología y dignidad. Tu familia es nuestra familia.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#">Cuidado Integral</a></li>
+                        <li><a href="#">Atención Médica</a></li>
+                        <li><a href="#">Rehabilitación</a></li>
+                        <li><a href="#">Actividades Recreativas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Nuestro Equipo</a></li>
+                        <li><a href="#">Instalaciones</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Principal 123</li>
+                        <li><i class="fas fa-phone"></i> +549 (3541) 12-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@arcobaleno.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ARCOBALENO. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
